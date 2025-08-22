@@ -1,0 +1,202 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #F4F8F6;
+  color: #333;
+  line-height: 1.6;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* カスタム変数 */
+:root {
+  /* 共通・SP版 */
+  --green: #557C55;
+  --gray: #757575;
+  --red: #f00;
+  --lightgreen: #A6CF98;
+  --lightgray: #D9D9D9;
+  --txt_min_sp: 0.8rem;
+  --txt_m_sp: 1rem;
+  --txt_bold: 600;
+  --txt_normal: 400;
+  --line_h: 1.6;
+  --width_con_sp: 1rem;
+  --width_margin_sp: 5vw;
+  --height_work_card: 64vw;
+  --height_menu: 60px;
+  --pagelink: calc(var(--height_menu) + 5vw);
+  --form_radius: 5px;
+  --form_padding: 0.3rem;
+  --form-margin_top: 0.5vw;
+  /* PC版 */
+  --txt_min_pc: 1rem;
+  --txt_m_pc: 1.2rem;
+  --width_con_pc: 980px;
+  --width_margin_pc: 4vw;
+  --width_modal_pc:700px;
+  --padding_modal_tb_pc:20px;
+  --padding_modal_lr_pc:30px;
+  --height_menu_pc: 70px;
+  --height_work_card_pc: 300px;
+  --pagelink_pc: calc(var(--height_menu_pc) + 5vw);
+  --card_gap_pc: 40px;
+}
+
+/* 共通CSS */
+section {
+  margin: 12.8vw auto 0;
+  padding: 0 var(--width_con_sp);
+}
+
+section:first-child {
+  margin: var(--height_menu) 0 0;
+  padding: 0;
+}
+
+section:last-child {
+  margin: 12.8vw auto;
+}
+
+h2 {
+  font-size: 1.4rem;
+  color: var(--green);
+  font-weight: var(--txt_bold);
+}
+
+h2 span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gray);
+  font-weight: var(--txt_normal);
+  margin-top: 0.5vw;
+}
+
+h3 {
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: var(--txt_bold);
+  color: var(--green);
+  letter-spacing: 0.1rem;
+  margin: 10vw 0 0; 
+  text-align: center;
+}
+
+h3::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 30%;
+  height: 1px;
+  background-color: var(--green);
+}
+
+h3::before,h3::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 30%;
+  height: 1px;
+  background-color: var(--green);
+}
+
+p.lead {
+  font-size: var(--txt_m_sp);
+  line-height: var(--line_h);
+  margin-top: var(--width_margin_sp);
+}
+
+p.lead_note {
+  font-size: var(--txt_m_sp);
+  color: var(--red);
+  line-height: var(--line_h);
+  margin-top: 0.5vw;
+}
+
+span.bold{
+  font-weight: var(--txt_bold);
+  background: linear-gradient(transparent 70%,var(--lightgreen) 70%);
+}
+
+/* PC版　*/
+@media (min-width: 1024px) {
+  section {
+    width: 90%;
+    max-width: var(--width_con_pc);
+    padding: 0;
+  }
+
+  section:first-child {
+    width: 100%;
+    margin: var(--height_menu_pc) 0 0;
+    max-width: none;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  h2 span {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+
+  p.lead {
+    font-size: var(--txt_m_pc);
+    margin-top: var(--width_margin_pc);
+  }
+
+  p.lead_note {
+    font-size: var(--txt_m_pc);
+  }
+}
